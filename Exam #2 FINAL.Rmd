@@ -1,0 +1,47 @@
+---
+title: "Exam#2 cdw3565"
+author: "Cameron Williamson"
+date: "6/28/2021"
+output:
+  word_document: default
+  pdf_document: default
+---
+
+# Clear enviornment
+rm(list=ls(all=TRUE))
+
+# summary 
+summary(college_scorecard)
+
+# Load stargazer
+library(stargazer)
+
+# Summary 
+stargazer(college_scorecard, type = "text")
+
+# Load doBy
+library(doBy)
+ 
+# Create smaller dataset 
+small_scorecard <- c("TX","LA","2014","2015")
+
+summary(small_scorecard)
+# Create "year" for avocados
+
+# Based on the dataset, people who graduated from Texas had a better chance at being hired. Texas got more hirees than LA- so they have a better chance at a job.
+
+# Summary stats for Titanic
+summary(titanic)
+
+# Summary
+stargazer(titanic, type= "text")
+
+# Crosstab for gender
+summaryBy(survived ~ female, data=titanic, FUN=c(mean,length))
+
+# Based on the cross tab, more men survived the sinking of the titanic
+
+# ifelse for titanic
+first_class <- c(titanic,"class"=1)
+
+# Bonus- "My Heart Will Go On"- Céline Dion
